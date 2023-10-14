@@ -1,10 +1,13 @@
 {
   "meta": {
-    "title": "News",
-    "pageTitle": "{{page}} | News"
+    "title": "News-Center",
+    "pageTitle": "{{page}} | News-Center"
   },
   "menu": {
     "dashboard": "Dashboard"
+  },
+  "labels": {
+    "search": "Suchen..."
   },
   "errors": {
     "generic": {
