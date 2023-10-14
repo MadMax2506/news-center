@@ -15,7 +15,7 @@ type TodoLinkProps = PropsWithChildren<
 function getLinkData(props: TodoLinkProps): [string, ReactNode] {
   switch (props.type) {
     case 'ticket':
-      return [`https://github.com/MadMax2506/news-app/issues/${props.ticketId}`, `#${props.ticketId}`];
+      return [`https://github.com/MadMax2506/news-center/issues/${props.ticketId}`, `#${props.ticketId}`];
     case 'default':
     default:
       return [props.href, props.children];
