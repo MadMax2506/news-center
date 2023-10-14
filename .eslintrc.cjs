@@ -1,14 +1,19 @@
 module.exports = {
   root: true,
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
-  parser: "@typescript-eslint/parser",
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+    'plugin:@tanstack/eslint-plugin-query/recommended',
+  ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: ["./tsconfig.json"]
+    project: ['./tsconfig.json'],
   },
-  plugins: ['@typescript-eslint', 'prettier'],
+  plugins: ['@typescript-eslint', 'prettier', '@tanstack/query'],
   rules: {
     eqeqeq: 2,
-    "import/prefer-default-export": 0,
+    'import/prefer-default-export': 0,
     'max-len': [
       'error',
       {
@@ -20,24 +25,22 @@ module.exports = {
       },
     ],
     'prettier/prettier': 2,
-    "@typescript-eslint/ban-types": [
-      "error",
+    '@typescript-eslint/ban-types': [
+      'error',
       {
-        "extendDefaults": true,
-        "types": {
-          "{}": false
-        }
-      }
-    ]
+        extendDefaults: true,
+        types: {
+          '{}': false,
+        },
+      },
+    ],
   },
-  "overrides": [
+  overrides: [
     {
-      "files": [
-        "*.tsx",
-        "*.ts"
-      ],
-      "rules": {
-        "import/no-anonymous-default-export": "off",
-      }
-    }]
+      files: ['*.tsx', '*.ts'],
+      rules: {
+        'import/no-anonymous-default-export': 'off',
+      },
+    },
+  ],
 };
