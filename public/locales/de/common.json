@@ -4,7 +4,9 @@
     "pageTitle": "{{page}} | News-Center"
   },
   "menu": {
-    "dashboard": "Dashboard"
+    "dashboard": "Dashboard",
+    "news": "Nachrichten",
+    "weather": "Wetter"
   },
   "labels": {
     "search": "Suchen..."
