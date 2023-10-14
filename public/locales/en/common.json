@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "title": "React-Template"
+  },
+  "menu": {
+    "home": "Home"
+  },
+  "errors": {
+    "generic": {
+      "title": "Upps!",
+      "message": {
+        "part1": "Es tut uns aufrichtig leid, dass wir Ihnen aktuell den gewünschten Inhalt nicht anzeigen können. Unser Team arbeitet mit Hochdruck daran, die Seite so schnell wie möglich wieder verfügbar zu machen.",
+        "part2": "Wir entschuldigen uns für jegliche Unannehmlichkeiten, die Ihnen dadurch entstehen. Bitte versuchen Sie es zu einem späteren Zeitpunkt erneut.",
+        "part3": "Falls das Problem weiterhin besteht oder Sie zusätzliche Unterstützung benötigen, können Sie sich gerne an unseren Kundenservice wenden unter"
+      }
+    }
+  }
+}

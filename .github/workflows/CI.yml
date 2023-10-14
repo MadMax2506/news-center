@@ -1,0 +1,91 @@
+name: CI
+
+on:
+  workflow_call:
+  pull_request:
+    branches: [main]
+  push:
+    paths-ignore:
+      - "public/**"
+      - "index.html"
+      - ".gitignore"
+      - "LICENSE"
+      - "README.md"
+    branches: [main]
+
+env:
+  NODE_ENV: "development"
+  NODE_OPTIONS: "--max_old_space_size=4096"
+
+jobs:    
+  install:
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [ 18.x ]
+        pnpm-version: [ 8 ]
+    outputs:
+      os: ${{ matrix.os }}
+      node-version: ${{ matrix.node-version }}
+      pnpm-version: ${{ matrix.pnpm-version }}
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - uses: pnpm/action-setup@v2
+        with:
+          version: ${{ matrix.pnpm-version }}
+          run_install: false
+      - run: pnpm config set store-dir .pnpm-store
+      - run: pnpm install --no-frozen-lockfile
+  tsc:
+    needs: install
+    runs-on: ${{ needs.install.outputs.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v3.3.2
+        with:
+          path: .pnpm-store
+          key: "${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}"
+      - uses: pnpm/action-setup@v2
+        with:
+          version: ${{ needs.install.outputs.pnpm-version }}
+          run_install: false
+      - run: pnpm config set store-dir .pnpm-store
+      - run: pnpm install --no-frozen-lockfile
+      - run: pnpm type:check
+  lint:
+    needs: install
+    runs-on: ${{ needs.install.outputs.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v3.3.2
+        with:
+          path: .pnpm-store
+          key: "${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}"
+      - uses: pnpm/action-setup@v2
+        with:
+          version: ${{ needs.install.outputs.pnpm-version }}
+          run_install: false
+      - run: pnpm config set store-dir .pnpm-store
+      - run: pnpm install --no-frozen-lockfile
+      - run: pnpm lint
+  test:
+    needs: install
+    runs-on: ${{ needs.install.outputs.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v3.3.2
+        with:
+          path: .pnpm-store
+          key: "${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}"
+      - uses: pnpm/action-setup@v2
+        with:
+          version: ${{ needs.install.outputs.pnpm-version }}
+          run_install: false
+      - run: pnpm config set store-dir .pnpm-store
+      - run: pnpm install --no-frozen-lockfile
+      - run: pnpm build
+      - run: pnpm test
