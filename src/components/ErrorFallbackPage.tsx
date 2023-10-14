@@ -32,7 +32,7 @@ export const ErrorFallbackPageProps: FC<FallbackProps> = (): JSX.Element => {
 
             <Stack direction="row" spacing={2} justifyContent="center">
               <Button href={paths.root.pattern} variant="contained">
-                {t('menu.home')}
+                {t('menu.dashboard')}
               </Button>
             </Stack>
           </Stack>

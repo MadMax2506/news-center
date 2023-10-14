@@ -1,9 +1,10 @@
 {
   "meta": {
-    "title": "React-Template"
+    "title": "News",
+    "pageTitle": "{{page}} | News"
   },
   "menu": {
-    "home": "Home"
+    "dashboard": "Dashboard"
   },
   "errors": {
     "generic": {
