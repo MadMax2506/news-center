@@ -4,7 +4,7 @@ import { newsQueryKeyFactory } from './news-api.query-key-factory';
 import { Article, BaseResponse, Languages } from './news-api.types';
 import { useNewsApiFetcher } from './useNewsApiFetcher';
 
-export type QueryParams = {
+export type EverythingQueryParams = {
   q: string;
   searchIn?: ('title' | 'description' | 'content')[];
   sources?: string;
@@ -22,14 +22,14 @@ type Response = BaseResponse<{ totalResults: number; articles: Article[] }>;
 
 export type UseNewsApiEverythingProps = Simplify<
   Pick<UseBaseQueryOptions, 'suspense' | 'enabled' | 'initialData'> & {
-    queryParams: QueryParams;
+    queryParams: EverythingQueryParams;
   }
 >;
 
 export const useNewsApiEverything = (props: UseNewsApiEverythingProps): UseQueryResult<Article[]> => {
   const { queryParams, ...options } = props;
 
-  const { fetcher } = useNewsApiFetcher<Response, QueryParams>();
+  const { fetcher } = useNewsApiFetcher<Response, EverythingQueryParams>();
 
   return useQuery({
     ...options,

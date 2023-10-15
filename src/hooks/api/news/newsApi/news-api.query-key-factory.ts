@@ -1,6 +1,6 @@
-import { QueryParams as EverythingQueryParams } from './useNewsApiEverything';
-import { QueryParams as SourcesQueryParams } from './useNewsApiSources';
-import { QueryParams as TopHeadlinesQueryParams } from './useNewsApiTopHeadline';
+import { EverythingQueryParams } from './useNewsApiEverything';
+import { SourcesQueryParams } from './useNewsApiSources';
+import { TopHeadlinesQueryParams } from './useNewsApiTopHeadline';
 
 export const newsQueryKeyFactory = {
   all: () => ['newsApi'],

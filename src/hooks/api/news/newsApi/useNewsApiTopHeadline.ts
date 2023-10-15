@@ -4,7 +4,7 @@ import { newsQueryKeyFactory } from './news-api.query-key-factory';
 import { Article, BaseResponse, Categories, Countries } from './news-api.types';
 import { useNewsApiFetcher } from './useNewsApiFetcher';
 
-export type QueryParams = Simplify<
+export type TopHeadlinesQueryParams = Simplify<
   {
     q?: string;
     pageSize?: number;
@@ -27,14 +27,14 @@ type Response = BaseResponse<{ totalResults: number; articles: Article[] }>;
 
 export type UseNewsApiTopHeadlineProps = Simplify<
   Pick<UseBaseQueryOptions, 'suspense' | 'enabled' | 'initialData'> & {
-    queryParams: QueryParams;
+    queryParams: TopHeadlinesQueryParams;
   }
 >;
 
 export const useNewsApiTopHeadline = (props: UseNewsApiTopHeadlineProps): UseQueryResult<Article[]> => {
   const { queryParams, ...options } = props;
 
-  const { fetcher } = useNewsApiFetcher<Response, QueryParams>();
+  const { fetcher } = useNewsApiFetcher<Response, TopHeadlinesQueryParams>();
 
   return useQuery({
     ...options,
