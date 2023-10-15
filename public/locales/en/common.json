@@ -11,6 +11,9 @@
   "labels": {
     "search": "Search..."
   },
+  "message": {
+    "copiedLinkToClipboard": "The link was successfully copied to the clipboard."
+  },
   "errors": {
     "generic": {
       "title": "Opps!",
