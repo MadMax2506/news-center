@@ -26,11 +26,11 @@ export type Article = {
   };
   author: string;
   title: string;
-  description: string;
+  description: string | null;
   url: string;
-  urlToImage: string;
+  urlToImage: string | null;
   publishedAt: string;
-  content: string;
+  content: string | null;
 };
 
 export type Source = {

@@ -12,7 +12,7 @@ export type QueryParams = Simplify<
   } & (
     | {
         country: Countries;
-        category: Categories;
+        category?: Categories;
         sources?: never;
       }
     | {
