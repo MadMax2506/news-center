@@ -1,3 +1,57 @@
+export type Article = {
+  sophoraId: string;
+  externalId: string;
+  title: string;
+  date: string;
+  teaserImage: TeaserImage;
+  tags: Tag[];
+  updateCheckUrl: string;
+  tracking: Tracking[];
+  topline: string;
+  firstSentence: string;
+  brandingImage: BrandingImage;
+  details: string;
+  detailsweb: string;
+  shareURL: string;
+  geotags: Geotag[];
+  regionId: number;
+  regionIds: number[];
+  type: Type.STORY;
+  breakingNews: boolean;
+};
+
+enum Type {
+  STORY = 'story',
+  IMAGE = 'image',
+  GENERIC = 'generic',
+}
+
+type TeaserImage = {
+  title: string;
+  copyright: string;
+  alttext: string;
+  imageVariants: ImageVariants;
+  type: Type.IMAGE;
+};
+
+type ImageVariants = {
+  original?: string;
+  '1x1-144'?: string;
+  '1x1-256'?: string;
+  '1x1-432'?: string;
+  '1x1-640'?: string;
+  '1x1-840'?: string;
+  '16x9-256'?: string;
+  '16x9-384'?: string;
+  '16x9-512'?: string;
+  '16x9-640'?: string;
+  '16x9-960'?: string;
+  '16x9-1280'?: string;
+  '16x9-1920'?: string;
+};
+
+type Tag = { tag: string };
+
 type Tracking = {
   sid: string;
   src: string;
@@ -7,50 +61,15 @@ type Tracking = {
   cid: string;
   pti: string;
   bcr: string;
-  type: string;
+  type: Type.GENERIC;
 };
 
-type Tag = { tag: string };
-
-type Article = {
-  sophoraId: string;
-  externalId: string;
+type BrandingImage = {
   title: string;
-  // TODO
-  teaserImage: {};
-  date: string;
-  tracking: Tracking[];
-  tags: Tag[];
-  updateCheckUrl: string;
-  regionId: number;
-  details: string;
-  detailsweb: string;
-  shareURL: string;
-  topline: string;
-  firstSentence: string;
-  // TODO
-  geotags: [{}];
+  copyright: string;
+  alttext: string;
+  imageVariants: ImageVariants;
+  type: Type.IMAGE;
 };
 
-type Regional = {
-  sophoraId: string;
-  externalId: string;
-  title: string;
-  teaserImage: {};
-  tracking: Tracking[];
-  tags: Tag[];
-  updateCheckUrl: string;
-  regionId: string;
-  // TODO
-  images: [{}];
-  details: string;
-  detailsweb: string;
-  shareURL: string;
-  topline: string;
-  firstSentence: string;
-  geotags: string;
-  // TODO
-  brandingImage: {};
-  type: string;
-  breakingNews: boolean;
-};
+type Geotag = {};
