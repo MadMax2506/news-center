@@ -1,3 +1,24 @@
+import { Simplify } from 'type-fest';
+
+export enum ResponseStatus {
+  OK = 'ok',
+  ERROR = 'error',
+}
+
+type Error = {
+  code: string;
+  message: string;
+};
+
+export type BaseResponse<TData> = Simplify<
+  | (TData & {
+      status: ResponseStatus.OK;
+    })
+  | (Error & {
+      status: ResponseStatus.ERROR;
+    })
+>;
+
 export type Article = {
   source: {
     id: string;
@@ -21,17 +42,6 @@ export type Source = {
   language: Languages;
   country: Countries;
 };
-
-export type Error = {
-  status: Status.ERROR;
-  code: string;
-  message: string;
-};
-
-export enum Status {
-  OK = 'ok',
-  ERROR = 'error',
-}
 
 export enum Categories {
   BUSINESS = 'business',

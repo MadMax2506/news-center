@@ -1,12 +1,12 @@
 import { UseBaseQueryOptions, UseQueryResult, useQuery } from '@tanstack/react-query';
 import { Simplify } from 'type-fest';
-import { useFetcher } from '../../useFetcher';
 import { newsQueryKeyFactory } from './news-api.query-key-factory';
-import { Article, Categories, Countries, Status } from './news-api.types';
+import { Article, BaseResponse, Categories, Countries } from './news-api.types';
+import { useNewsApiFetcher } from './useNewsApiFetcher';
 
 export type QueryParams = Simplify<
   {
-    q: string;
+    q?: string;
     pageSize?: number;
     page?: number;
   } & (
@@ -23,29 +23,27 @@ export type QueryParams = Simplify<
   )
 >;
 
-type Response =
-  | {
-      status: Status;
-      totalResults: number;
-      articles: Article[];
-    }
-  | Error;
+type Response = BaseResponse<{ totalResults: number; articles: Article[] }>;
 
-export type useNewsApiTopHeadlineProps = Simplify<
+export type UseNewsApiTopHeadlineProps = Simplify<
   Pick<UseBaseQueryOptions, 'suspense' | 'enabled' | 'initialData'> & {
     queryParams: QueryParams;
   }
 >;
 
-export const useNewsApiTopHeadline = (props: useNewsApiTopHeadlineProps): UseQueryResult<Response> => {
-  const { queryParams } = props;
+export const useNewsApiTopHeadline = (props: UseNewsApiTopHeadlineProps): UseQueryResult<Article[]> => {
+  const { queryParams, ...options } = props;
 
-  const fetcher = useFetcher<Response, QueryParams>({ type: 'newsApi' });
+  const { fetcher } = useNewsApiFetcher<Response, QueryParams>();
 
   return useQuery({
+    ...options,
     queryKey: newsQueryKeyFactory.topHeadline(queryParams),
     queryFn: async ({ signal }) => {
-      // TODO: Implement the API call
+      const response = await fetcher({ url: 'top-headlines', params: queryParams, config: { signal } });
+
+      if (response.status === 'error') throw new Error(response.message);
+      return response.articles;
     },
   });
 };

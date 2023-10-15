@@ -1,2 +1,2 @@
 export * from './news';
-export * from './useFetcher';
+export * from './news/newsApi/useNewsApiFetcher';

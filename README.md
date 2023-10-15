@@ -11,7 +11,8 @@ pnpm i
 
 ## :nut_and_bolt: Starting Development
 
-Start the app in the `dev` environment:
+1. Copy `.env.sample` to `.env`
+1. Start the app in the `dev` environment:
 
 ```bash
 pnpm i

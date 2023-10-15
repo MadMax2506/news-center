@@ -6,5 +6,7 @@ export const newsQueryKeyFactory = {
   all: () => ['newsApi'],
   everything: (queryParams: EverythingQueryParams) => ['newsApi', 'everything', queryParams],
   topHeadline: (queryParams: TopHeadlinesQueryParams) => ['newsApi', 'topHeadline', queryParams],
-  sources: (queryParams: SourcesQueryParams) => ['newsApi', 'sources', queryParams],
+  sourcesByParams: (queryParams: SourcesQueryParams | undefined) => {
+    return queryParams ? ['newsApi', 'sources', queryParams] : ['newsApi', 'sources'];
+  },
 };

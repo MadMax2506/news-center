@@ -1,8 +1,8 @@
 import { UseBaseQueryOptions, UseQueryResult, useQuery } from '@tanstack/react-query';
 import { Simplify } from 'type-fest';
-import { useFetcher } from '../../useFetcher';
 import { newsQueryKeyFactory } from './news-api.query-key-factory';
-import { Categories, Countries, Languages, Source, Status } from './news-api.types';
+import { BaseResponse, Categories, Countries, Languages, Source } from './news-api.types';
+import { useNewsApiFetcher } from './useNewsApiFetcher';
 
 export type QueryParams = {
   category?: Categories;
@@ -10,28 +10,27 @@ export type QueryParams = {
   country?: Countries;
 };
 
-type Response =
-  | {
-      status: Status;
-      sources: Source[];
-    }
-  | Error;
+type Response = BaseResponse<{ sources: Source[] }>;
 
 type UseNewsApiSourcesProps = Simplify<
   Pick<UseBaseQueryOptions, 'suspense' | 'enabled' | 'initialData'> & {
-    queryParams: QueryParams;
+    queryParams?: QueryParams;
   }
 >;
 
-export const useNewsApiSources = (props: UseNewsApiSourcesProps): UseQueryResult<Response> => {
-  const { queryParams } = props;
+export const useNewsApiSources = (props?: UseNewsApiSourcesProps): UseQueryResult<Source[]> => {
+  const { queryParams, ...options } = { ...props };
 
-  const fetcher = useFetcher<Response, QueryParams>({ type: 'newsApi' });
+  const { fetcher } = useNewsApiFetcher<Response, QueryParams>();
 
   return useQuery({
-    queryKey: newsQueryKeyFactory.sources(queryParams),
+    ...options,
+    queryKey: newsQueryKeyFactory.sourcesByParams(queryParams),
     queryFn: async ({ signal }) => {
-      // TODO: Implement the API call
+      const response = await fetcher({ url: 'sources', params: queryParams, config: { signal } });
+
+      if (response.status === 'error') throw new Error(response.message);
+      return response.sources;
     },
   });
 };
