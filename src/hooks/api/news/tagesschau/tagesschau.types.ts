@@ -1,32 +1,51 @@
+export enum Regions {
+  BADEN_WÜRTTEMBERG = 1,
+  BAVARIA = 2,
+  BERLIN = 3,
+  BRANDENBURG = 4,
+  BREMEN = 5,
+  HAMBURG = 6,
+  HESSE = 7,
+  MECKLENBURG_WESTERN_POMERANIA = 8,
+  LOWER_SAXONY = 9,
+  NORTHRHINE_WESTPHALIA = 10,
+  RHINELAND_PALATINATE = 11,
+  SAARLAND = 12,
+  SAXONY = 13,
+  SAXONY_ANHALT = 14,
+  SCHLESWIG_HOLSTEIN = 15,
+  THURINGIA = 16,
+}
+
 export type Article = {
   sophoraId: string;
   externalId: string;
   title: string;
+  teaserImage: Image;
   date: string;
-  teaserImage: TeaserImage;
+  tracking: Tracking[];
   tags: Tag[];
   updateCheckUrl: string;
-  tracking: Tracking[];
-  topline: string;
-  firstSentence: string;
-  brandingImage: BrandingImage;
+  regionId: number;
   details: string;
   detailsweb: string;
   shareURL: string;
-  geotags: Geotag[];
-  regionId: number;
   regionIds: number[];
+  topline: string;
+  firstSentence: string;
+  brandingImage: BrandingImage;
   type: Type.STORY;
   breakingNews: boolean;
 };
 
-enum Type {
+export enum Type {
+  NEWS_PAGE = 'news page',
   STORY = 'story',
   IMAGE = 'image',
   GENERIC = 'generic',
 }
 
-type TeaserImage = {
+type Image = {
   title: string;
   copyright: string;
   alttext: string;
@@ -71,5 +90,3 @@ type BrandingImage = {
   imageVariants: ImageVariants;
   type: Type.IMAGE;
 };
-
-type Geotag = {};
