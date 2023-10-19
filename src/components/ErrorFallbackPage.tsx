@@ -4,8 +4,10 @@ import { FC } from 'react';
 import { FallbackProps } from 'react-error-boundary';
 import { useTranslation } from 'react-i18next';
 
-export const ErrorFallbackPageProps: FC<FallbackProps> = (): JSX.Element => {
+export const ErrorFallbackPageProps: FC<FallbackProps> = ({ error }): JSX.Element => {
   const { t } = useTranslation();
+
+  if (import.meta.env.DEV) console.error(error);
 
   return (
     <Stack justifyContent="center" alignItems="center" spacing={2} maxWidth="100vw" maxHeight="100vh">
