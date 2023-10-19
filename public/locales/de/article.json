@@ -1,0 +1,10 @@
+{
+  "tooltips": {
+    "share": "Artikel teilen",
+    "open": "Artikel öffnen"
+  },
+  "message": {
+    "error": "Beim Laden der Artikel ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
+    "copiedLinkToClipboard": "Der Link wurde erfolgreich in die Zwischenablage kopiert."
+  }
+}
