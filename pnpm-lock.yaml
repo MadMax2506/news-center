@@ -4,156 +4,158 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  '@emotion/react':
-    specifier: ^11.11.1
-    version: 11.11.1(@types/react@18.2.28)(react@18.2.0)
-  '@emotion/styled':
-    specifier: ^11.11.0
-    version: 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.28)(react@18.2.0)
-  '@mui/icons-material':
-    specifier: ^5.14.13
-    version: 5.14.13(@mui/material@5.14.13)(@types/react@18.2.28)(react@18.2.0)
-  '@mui/material':
-    specifier: ^5.14.13
-    version: 5.14.13(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.28)(react-dom@18.2.0)(react@18.2.0)
-  '@mui/x-date-pickers':
-    specifier: ^6.16.2
-    version: 6.16.2(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@mui/material@5.14.13)(@mui/system@5.14.12)(@types/react@18.2.28)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0)
-  '@tanstack/react-query':
-    specifier: ^4.36.1
-    version: 4.36.1(react-dom@18.2.0)(react@18.2.0)
-  '@types/lodash':
-    specifier: ^4.14.199
-    version: 4.14.199
-  axios:
-    specifier: ^1.5.1
-    version: 1.5.1
-  dayjs:
-    specifier: ^1.11.10
-    version: 1.11.10
-  i18next:
-    specifier: ^23.5.1
-    version: 23.5.1
-  i18next-browser-languagedetector:
-    specifier: ^7.1.0
-    version: 7.1.0
-  i18next-http-backend:
-    specifier: ^2.2.2
-    version: 2.2.2
-  lodash:
-    specifier: ^4.17.21
-    version: 4.17.21
-  qs:
-    specifier: ^6.11.2
-    version: 6.11.2
-  react:
-    specifier: ^18.2.0
-    version: 18.2.0
-  react-cookie:
-    specifier: ^6.1.1
-    version: 6.1.1(react@18.2.0)
-  react-dom:
-    specifier: ^18.2.0
-    version: 18.2.0(react@18.2.0)
-  react-error-boundary:
-    specifier: ^4.0.11
-    version: 4.0.11(react@18.2.0)
-  react-helmet:
-    specifier: ^6.1.0
-    version: 6.1.0(react@18.2.0)
-  react-i18next:
-    specifier: ^13.3.0
-    version: 13.3.0(i18next@23.5.1)(react-dom@18.2.0)(react@18.2.0)
-  react-router-dom:
-    specifier: ^6.16.0
-    version: 6.16.0(react-dom@18.2.0)(react@18.2.0)
-  static-path:
-    specifier: ^0.0.4
-    version: 0.0.4
-  type-fest:
-    specifier: ^4.4.0
-    version: 4.4.0
-  vite-plugin-eslint:
-    specifier: ^1.8.1
-    version: 1.8.1(eslint@8.51.0)(vite@4.4.11)
-  vite-plugin-svgr:
-    specifier: ^4.1.0
-    version: 4.1.0(vite@4.4.11)
-  vite-tsconfig-paths:
-    specifier: ^4.2.1
-    version: 4.2.1(typescript@5.2.2)(vite@4.4.11)
+importers:
 
-devDependencies:
-  '@tanstack/eslint-plugin-query':
-    specifier: ^4.36.1
-    version: 4.36.1(eslint@8.51.0)
-  '@testing-library/jest-dom':
-    specifier: ^6.1.4
-    version: 6.1.4(vitest@0.34.6)
-  '@testing-library/react':
-    specifier: ^14.0.0
-    version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
-  '@types/node':
-    specifier: ^20.8.6
-    version: 20.8.6
-  '@types/qs':
-    specifier: ^6.9.8
-    version: 6.9.8
-  '@types/react':
-    specifier: ^18.2.28
-    version: 18.2.28
-  '@types/react-cookies':
-    specifier: ^0.1.1
-    version: 0.1.1
-  '@types/react-dom':
-    specifier: ^18.2.13
-    version: 18.2.13
-  '@types/react-helmet':
-    specifier: ^6.1.7
-    version: 6.1.7
-  '@types/react-router-dom':
-    specifier: ^5.3.3
-    version: 5.3.3
-  '@typescript-eslint/eslint-plugin':
-    specifier: ^5.62.0
-    version: 5.62.0(@typescript-eslint/parser@5.62.0)(eslint@8.51.0)(typescript@5.2.2)
-  '@typescript-eslint/parser':
-    specifier: ^5.62.0
-    version: 5.62.0(eslint@8.51.0)(typescript@5.2.2)
-  '@vitejs/plugin-react':
-    specifier: ^4.1.0
-    version: 4.1.0(vite@4.4.11)
-  eslint:
-    specifier: ^8.51.0
-    version: 8.51.0
-  eslint-config-prettier:
-    specifier: ^9.0.0
-    version: 9.0.0(eslint@8.51.0)
-  eslint-plugin-prettier:
-    specifier: ^4.2.1
-    version: 4.2.1(eslint-config-prettier@9.0.0)(eslint@8.51.0)(prettier@2.8.8)
-  jsdom:
-    specifier: ^22.1.0
-    version: 22.1.0
-  node-fetch:
-    specifier: ^3.3.2
-    version: 3.3.2
-  prettier:
-    specifier: ^2.8.8
-    version: 2.8.8
-  react-test-renderer:
-    specifier: ^18.2.0
-    version: 18.2.0(react@18.2.0)
-  typescript:
-    specifier: ^5.2.2
-    version: 5.2.2
-  vite:
-    specifier: ^4.4.11
-    version: 4.4.11(@types/node@20.8.6)
-  vitest:
-    specifier: ^0.34.6
-    version: 0.34.6(jsdom@22.1.0)
+  .:
+    dependencies:
+      '@emotion/react':
+        specifier: ^11.11.1
+        version: 11.11.1(@types/react@18.2.28)(react@18.2.0)
+      '@emotion/styled':
+        specifier: ^11.11.0
+        version: 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.28)(react@18.2.0)
+      '@mui/icons-material':
+        specifier: ^5.14.13
+        version: 5.14.13(@mui/material@5.14.13)(@types/react@18.2.28)(react@18.2.0)
+      '@mui/material':
+        specifier: ^5.14.13
+        version: 5.14.13(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.28)(react-dom@18.2.0)(react@18.2.0)
+      '@mui/x-date-pickers':
+        specifier: ^6.16.2
+        version: 6.16.2(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@mui/material@5.14.13)(@mui/system@5.14.13)(@types/react@18.2.28)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0)
+      '@tanstack/react-query':
+        specifier: ^4.36.1
+        version: 4.36.1(react-dom@18.2.0)(react@18.2.0)
+      '@types/lodash':
+        specifier: ^4.14.199
+        version: 4.14.199
+      axios:
+        specifier: ^1.5.1
+        version: 1.5.1
+      dayjs:
+        specifier: ^1.11.10
+        version: 1.11.10
+      i18next:
+        specifier: ^23.5.1
+        version: 23.5.1
+      i18next-browser-languagedetector:
+        specifier: ^7.1.0
+        version: 7.1.0
+      i18next-http-backend:
+        specifier: ^2.2.2
+        version: 2.2.2
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
+      qs:
+        specifier: ^6.11.2
+        version: 6.11.2
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-cookie:
+        specifier: ^6.1.1
+        version: 6.1.1(react@18.2.0)
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+      react-error-boundary:
+        specifier: ^4.0.11
+        version: 4.0.11(react@18.2.0)
+      react-helmet:
+        specifier: ^6.1.0
+        version: 6.1.0(react@18.2.0)
+      react-i18next:
+        specifier: ^13.3.0
+        version: 13.3.0(i18next@23.5.1)(react-dom@18.2.0)(react@18.2.0)
+      react-router-dom:
+        specifier: ^6.16.0
+        version: 6.16.0(react-dom@18.2.0)(react@18.2.0)
+      static-path:
+        specifier: ^0.0.4
+        version: 0.0.4
+      type-fest:
+        specifier: ^4.4.0
+        version: 4.4.0
+      vite-plugin-eslint:
+        specifier: ^1.8.1
+        version: 1.8.1(eslint@8.51.0)(vite@4.4.11)
+      vite-plugin-svgr:
+        specifier: ^4.1.0
+        version: 4.1.0(vite@4.4.11)
+      vite-tsconfig-paths:
+        specifier: ^4.2.1
+        version: 4.2.1(typescript@5.2.2)(vite@4.4.11)
+    devDependencies:
+      '@tanstack/eslint-plugin-query':
+        specifier: ^4.36.1
+        version: 4.36.1(eslint@8.51.0)
+      '@testing-library/jest-dom':
+        specifier: ^6.1.4
+        version: 6.1.4(vitest@0.34.6)
+      '@testing-library/react':
+        specifier: ^14.0.0
+        version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
+      '@types/node':
+        specifier: ^20.8.6
+        version: 20.8.6
+      '@types/qs':
+        specifier: ^6.9.8
+        version: 6.9.8
+      '@types/react':
+        specifier: ^18.2.28
+        version: 18.2.28
+      '@types/react-cookies':
+        specifier: ^0.1.1
+        version: 0.1.1
+      '@types/react-dom':
+        specifier: ^18.2.13
+        version: 18.2.13
+      '@types/react-helmet':
+        specifier: ^6.1.7
+        version: 6.1.7
+      '@types/react-router-dom':
+        specifier: ^5.3.3
+        version: 5.3.3
+      '@typescript-eslint/eslint-plugin':
+        specifier: ^5.62.0
+        version: 5.62.0(@typescript-eslint/parser@5.62.0)(eslint@8.51.0)(typescript@5.2.2)
+      '@typescript-eslint/parser':
+        specifier: ^5.62.0
+        version: 5.62.0(eslint@8.51.0)(typescript@5.2.2)
+      '@vitejs/plugin-react':
+        specifier: ^4.1.0
+        version: 4.1.0(vite@4.4.11)
+      eslint:
+        specifier: ^8.51.0
+        version: 8.51.0
+      eslint-config-prettier:
+        specifier: ^9.0.0
+        version: 9.0.0(eslint@8.51.0)
+      eslint-plugin-prettier:
+        specifier: ^4.2.1
+        version: 4.2.1(eslint-config-prettier@9.0.0)(eslint@8.51.0)(prettier@2.8.8)
+      jsdom:
+        specifier: ^22.1.0
+        version: 22.1.0
+      node-fetch:
+        specifier: ^3.3.2
+        version: 3.3.2
+      prettier:
+        specifier: ^2.8.8
+        version: 2.8.8
+      react-test-renderer:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+      typescript:
+        specifier: ^5.2.2
+        version: 5.2.2
+      vite:
+        specifier: ^4.4.11
+        version: 4.4.11(@types/node@20.8.6)
+      vitest:
+        specifier: ^0.34.6
+        version: 0.34.6(jsdom@22.1.0)
 
 packages:
 
@@ -179,13 +181,6 @@ packages:
       '@babel/highlight': 7.22.20
       chalk: 2.4.2
 
-  /@babel/code-frame@7.22.5:
-    resolution: {integrity: sha512-Xmwn266vad+6DAqEB2A6V/CcZVp62BbwVmcOJc2RPuwih1kw02TjQvWVWlcKGbBPd+8/0V5DEkOcizRGYsspYQ==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/highlight': 7.22.20
-    dev: true
-
   /@babel/compat-data@7.22.9:
     resolution: {integrity: sha512-5UamI7xkUcJ3i9qVDS+KFDEK8/7oJ55/sJMB1Ge7IEapr7KfdfV/HErR+koZwOfd+SgtFKOKRhRakdg++DcJpQ==}
     engines: {node: '>=6.9.0'}
@@ -202,7 +197,7 @@ packages:
       '@babel/helpers': 7.23.1
       '@babel/parser': 7.23.0
       '@babel/template': 7.22.15
-      '@babel/traverse': 7.23.0
+      '@babel/traverse': 7.23.2
       '@babel/types': 7.23.0
       convert-source-map: 2.0.0
       debug: 4.3.4
@@ -301,7 +296,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/template': 7.22.15
-      '@babel/traverse': 7.23.0
+      '@babel/traverse': 7.23.2
       '@babel/types': 7.23.0
     transitivePeerDependencies:
       - supports-color
@@ -361,8 +356,8 @@ packages:
       '@babel/parser': 7.23.0
       '@babel/types': 7.23.0
 
-  /@babel/traverse@7.23.0:
-    resolution: {integrity: sha512-t/QaEvyIoIkwzpiZ7aoSKK8kObQYeF7T2v+dazAYCb8SXtp58zEVkWW7zAnju8FNKNdr4ScAOEDmMItbyOmEYw==}
+  /@babel/traverse@7.23.2:
+    resolution: {integrity: sha512-azpe59SQ48qG6nu2CzcMLbxUudtN+dOM9kDbUqGq3HXUJRlo7i8fvPoxQUzYgLZ4cMVmuZgm8vvBpNeRhd6XSw==}
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/code-frame': 7.22.13
@@ -899,23 +894,6 @@ packages:
       react-transition-group: 4.4.5(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
-  /@mui/private-theming@5.14.12(@types/react@18.2.28)(react@18.2.0):
-    resolution: {integrity: sha512-TWwm+9+BgHFpoR3w04FG+IqID4ALa74A27RuKq2CEaWgxliBZB24EVeI6djfjFt5t4FYmIb8BMw2ZJEir7YjLQ==}
-    engines: {node: '>=12.0.0'}
-    peerDependencies:
-      '@types/react': ^17.0.0 || ^18.0.0
-      react: ^17.0.0 || ^18.0.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-    dependencies:
-      '@babel/runtime': 7.23.1
-      '@mui/utils': 5.14.12(@types/react@18.2.28)(react@18.2.0)
-      '@types/react': 18.2.28
-      prop-types: 15.8.1
-      react: 18.2.0
-    dev: false
-
   /@mui/private-theming@5.14.13(@types/react@18.2.28)(react@18.2.0):
     resolution: {integrity: sha512-5EFqk4tqiSwPguj4NW/6bUf4u1qoUWXy9lrKfNh9H6oAohM+Ijv/7qSxFjnxPGBctj469/Sc5aKAR35ILBKZLQ==}
     engines: {node: '>=12.0.0'}
@@ -929,28 +907,6 @@ packages:
       '@babel/runtime': 7.23.1
       '@mui/utils': 5.14.13(@types/react@18.2.28)(react@18.2.0)
       '@types/react': 18.2.28
-      prop-types: 15.8.1
-      react: 18.2.0
-    dev: false
-
-  /@mui/styled-engine@5.14.12(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(react@18.2.0):
-    resolution: {integrity: sha512-bocxt1nDmXfB3gpLfCCmFCyJ7sVmscFs+PuheO210QagZwHVp47UIRT1AiswLDYSQo1ZqmVGn7KLEJEYK0d4Xw==}
-    engines: {node: '>=12.0.0'}
-    peerDependencies:
-      '@emotion/react': ^11.4.1
-      '@emotion/styled': ^11.3.0
-      react: ^17.0.0 || ^18.0.0
-    peerDependenciesMeta:
-      '@emotion/react':
-        optional: true
-      '@emotion/styled':
-        optional: true
-    dependencies:
-      '@babel/runtime': 7.23.1
-      '@emotion/cache': 11.11.0
-      '@emotion/react': 11.11.1(@types/react@18.2.28)(react@18.2.0)
-      '@emotion/styled': 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.28)(react@18.2.0)
-      csstype: 3.1.2
       prop-types: 15.8.1
       react: 18.2.0
     dev: false
@@ -972,36 +928,6 @@ packages:
       '@emotion/cache': 11.11.0
       '@emotion/react': 11.11.1(@types/react@18.2.28)(react@18.2.0)
       '@emotion/styled': 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.28)(react@18.2.0)
-      csstype: 3.1.2
-      prop-types: 15.8.1
-      react: 18.2.0
-    dev: false
-
-  /@mui/system@5.14.12(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.28)(react@18.2.0):
-    resolution: {integrity: sha512-6DXfjjLhW0/ia5qU3Crke7j+MnfDbMBOHlLIrqbrEqNs0AuSBv8pXniEGb+kqO0H804NJreRTEJRjCngwOX5CA==}
-    engines: {node: '>=12.0.0'}
-    peerDependencies:
-      '@emotion/react': ^11.5.0
-      '@emotion/styled': ^11.3.0
-      '@types/react': ^17.0.0 || ^18.0.0
-      react: ^17.0.0 || ^18.0.0
-    peerDependenciesMeta:
-      '@emotion/react':
-        optional: true
-      '@emotion/styled':
-        optional: true
-      '@types/react':
-        optional: true
-    dependencies:
-      '@babel/runtime': 7.23.1
-      '@emotion/react': 11.11.1(@types/react@18.2.28)(react@18.2.0)
-      '@emotion/styled': 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.28)(react@18.2.0)
-      '@mui/private-theming': 5.14.12(@types/react@18.2.28)(react@18.2.0)
-      '@mui/styled-engine': 5.14.12(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(react@18.2.0)
-      '@mui/types': 7.2.5(@types/react@18.2.28)
-      '@mui/utils': 5.14.12(@types/react@18.2.28)(react@18.2.0)
-      '@types/react': 18.2.28
-      clsx: 2.0.0
       csstype: 3.1.2
       prop-types: 15.8.1
       react: 18.2.0
@@ -1095,7 +1021,7 @@ packages:
       react-is: 18.2.0
     dev: false
 
-  /@mui/x-date-pickers@6.16.2(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@mui/material@5.14.13)(@mui/system@5.14.12)(@types/react@18.2.28)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0):
+  /@mui/x-date-pickers@6.16.2(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@mui/material@5.14.13)(@mui/system@5.14.13)(@types/react@18.2.28)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-JFrDUeBkiKtfJ0WqwyPBICEP1U+Ujfsily3ZQ/Hv4zAOleG/5769EgS7TOO4cVgnuhtvQ/pqx2gmuCn8/gcC5w==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -1137,7 +1063,7 @@ packages:
       '@emotion/styled': 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.28)(react@18.2.0)
       '@mui/base': 5.0.0-beta.18(@types/react@18.2.28)(react-dom@18.2.0)(react@18.2.0)
       '@mui/material': 5.14.13(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.28)(react-dom@18.2.0)(react@18.2.0)
-      '@mui/system': 5.14.12(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.28)(react@18.2.0)
+      '@mui/system': 5.14.13(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.28)(react@18.2.0)
       '@mui/utils': 5.14.12(@types/react@18.2.28)(react@18.2.0)
       '@types/react-transition-group': 4.4.7
       clsx: 2.0.0
@@ -1362,7 +1288,7 @@ packages:
     resolution: {integrity: sha512-xTEnpUKiV/bMyEsE5bT4oYA0x0Z/colMtxzUY8bKyPXBNLn/e0V4ZjBZkEhms0xE4pv9QsPfSRu9AWS4y5wGvA==}
     engines: {node: '>=14'}
     dependencies:
-      '@babel/code-frame': 7.22.5
+      '@babel/code-frame': 7.22.13
       '@babel/runtime': 7.23.1
       '@types/aria-query': 5.0.1
       aria-query: 5.1.3
