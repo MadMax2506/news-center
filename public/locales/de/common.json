@@ -11,9 +11,6 @@
   "labels": {
     "search": "Suchen..."
   },
-  "message": {
-    "copiedLinkToClipboard": "Der Link wurde erfolgreich in die Zwischenablage kopiert."
-  },
   "errors": {
     "generic": {
       "title": "Upps!",
