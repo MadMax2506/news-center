@@ -1,4 +1,4 @@
 {
   "prettier.prettierPath": "./node_modules/prettier",
-  "conventionalCommits.scopes": ["navigation", "news"]
+  "conventionalCommits.scopes": ["navigation", "news", "weather"]
 }
