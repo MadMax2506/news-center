@@ -1,19 +1,18 @@
-import { ArticleCard } from '@components/ArticleCard';
-import { Pagination } from '@components/Pagination';
-import { usePaginationContext } from '@context/PaginationContext';
-import { Article } from '@hooks/api/news';
-import { Alert, Stack } from '@mui/material';
-import { FC, Suspense } from 'react';
+import { PaginationProvider } from '@context/PaginationContext';
+import { Article, Regions, useTagesschauNews } from '@hooks/api/news';
+import { Alert } from '@mui/material';
+import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { BaseStructure } from './BaseStructure';
-import { Skeletons, SkeletonsProps } from './Skeletons';
+import { PAGE_SIZE } from '../News';
+import { Content } from './Content';
 
-type NewsListProps = SkeletonsProps;
-
-export const NewsList: FC<NewsListProps> = ({ pageSize }): JSX.Element => {
-  const { paginatedData, isError } = usePaginationContext<Article>();
-
+export const NewsList: FC = (): JSX.Element => {
   const { t } = useTranslation(['article']);
+
+  const { data, isError } = useTagesschauNews({
+    // TODO https://github.com/MadMax2506/news-center/issues/17
+    queryParams: { region: Regions.NORTHRHINE_WESTPHALIA },
+  });
 
   if (isError) {
     return (
@@ -23,19 +22,12 @@ export const NewsList: FC<NewsListProps> = ({ pageSize }): JSX.Element => {
     );
   }
 
+  const { news = [] } = { ...data };
+  const filteredNews = news.filter(({ shareURL, detailsweb }) => shareURL ?? detailsweb);
+
   return (
-    <Stack spacing={4} alignItems="center" alignContent="center">
-      <Pagination />
-
-      <Suspense fallback={<Skeletons pageSize={pageSize} />}>
-        <BaseStructure>
-          {paginatedData.map((article) => (
-            <ArticleCard key={article.sophoraId} article={article} />
-          ))}
-        </BaseStructure>
-      </Suspense>
-
-      <Pagination />
-    </Stack>
+    <PaginationProvider<Article> data={filteredNews} isError={isError} pageSize={PAGE_SIZE}>
+      <Content />
+    </PaginationProvider>
   );
 };
