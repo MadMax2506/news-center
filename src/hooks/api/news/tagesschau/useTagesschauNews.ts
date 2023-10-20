@@ -1,5 +1,5 @@
-import { UseQueryOptions, UseQueryResult, useQuery } from '@tanstack/react-query';
-import qs from 'qs';
+import { BaseApiQueryProps } from '@hooks/api/api.types';
+import { UseQueryResult, useQuery } from '@tanstack/react-query';
 import { Simplify } from 'type-fest';
 import { request } from '../../request';
 import { Article, Regions, Type } from './tagesschau.types';
@@ -16,7 +16,7 @@ type TagesschauNewsResponse = {
 };
 
 type UseTagesschauNewsProps = Simplify<
-  Pick<UseQueryOptions, 'suspense' | 'enabled' | 'retry'> & {
+  BaseApiQueryProps & {
     queryParams: TagesschauNewsQueryParams;
   }
 >;
@@ -34,9 +34,6 @@ export const useTagesschauNews = (
       return await request<TagesschauNewsResponse>(`https://www.tagesschau.de/api2/news`, {
         method: 'GET',
         params: { ...queryParams },
-        paramsSerializer: {
-          serialize: (params) => qs.stringify(params, { arrayFormat: 'repeat', skipNulls: true }),
-        },
         signal,
       });
     },

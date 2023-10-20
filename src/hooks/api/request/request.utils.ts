@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 import qs from 'qs';
 
-export const request = async <TRes>(url: string, config: Omit<AxiosRequestConfig, 'url' | 'validateStatus'>) => {
+export const request = async <TRes>(url: string, config: Pick<AxiosRequestConfig, 'method' | 'params' | 'signal'>) => {
   const response = await axios.request<TRes, AxiosResponse<TRes>>({
     ...config,
     url,
