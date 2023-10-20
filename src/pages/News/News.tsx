@@ -15,7 +15,7 @@ export const News = (): JSX.Element => {
     queryParams: { region: Regions.NORTHRHINE_WESTPHALIA },
   });
   const { news = [] } = { ...data };
-  const filteredNews = news.filter(({ shareURL, detailsweb }) => shareURL || detailsweb);
+  const filteredNews = news.filter(({ shareURL, detailsweb }) => shareURL ?? detailsweb);
 
   return (
     <Container component="main" maxWidth="xl" sx={{ py: 2 }}>
