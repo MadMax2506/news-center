@@ -3,12 +3,12 @@ import { DelayedComponent } from '@components/DelayedComponent';
 import { FC } from 'react';
 import { BaseStructure } from './BaseStructure';
 
-export type SkeletonsProps = {
+type NewsListSkeletionsProps = {
   pageSize: number;
 };
 
-export const Skeletons: FC<SkeletonsProps> = ({ pageSize }): JSX.Element => (
-  <DelayedComponent delay={800}>
+export const NewsListSkeletions: FC<NewsListSkeletionsProps> = ({ pageSize }): JSX.Element => (
+  <DelayedComponent delay={0}>
     <BaseStructure>
       {new Array(pageSize).fill(null).map((_, index) => (
         <ArticleCardSkeleton key={index} />
