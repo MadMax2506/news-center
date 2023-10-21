@@ -1,5 +1,29 @@
 {
+  "cloudiness": "Bewölkung: {{cloudiness}}%",
   "message": {
     "error": "Beim Laden der Wetter-Daten ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut."
+  },
+  "precipitation": {
+    "rain": {
+      "last3Hours": "Regen (letzte 3 Stunden): {{rain}} mm",
+      "lastHour": "Regen (letzte Stunde): {{rain}} mm"
+    },
+    "snow": {
+      "last3Hours": "Schnee (letzte 3 Stunden): {{snow}} mm",
+      "lastHour": "Schnee (letzte Stunde): {{snow}} mm"
+    },
+    "title": "Niederschlag"
+  },
+  "temperature": {
+    "current": "Temperatur: {{temp}} °C",
+    "feelsLike": "gefühlte Temperatur: {{temp}} °C",
+    "max": "max. Temperatur: {{temp}} °C",
+    "min": "min. Temperatur: {{temp}} °C",
+    "title": "Temperatur"
+  },
+  "wind": {
+    "gust": "Windböen: {{gust}} m/s",
+    "speed": "Windgeschwindigkeit: {{speed}} m/s",
+    "title": "Wind"
   }
 }
