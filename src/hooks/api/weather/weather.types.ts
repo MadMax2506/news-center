@@ -17,7 +17,7 @@ export type BaseWeatherInformation = {
 export type Wind = {
   speed: number;
   deg: number;
-  gust: number;
+  gust?: number;
 };
 
 export type Precipitation = {
