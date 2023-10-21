@@ -22,8 +22,8 @@ export const NewsList: FC = (): JSX.Element => {
     );
   }
 
-  const { news = [] } = { ...data };
-  const filteredNews = news.filter(({ shareURL, detailsweb }) => shareURL ?? detailsweb);
+  const { news = [] } = data ?? {};
+  const filteredNews = news.filter(({ shareURL, detailsweb }) => Boolean(shareURL) || Boolean(detailsweb));
 
   return (
     <PaginationProvider<Article> data={filteredNews} isError={isError} pageSize={PAGE_SIZE}>

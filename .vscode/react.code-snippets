@@ -3,9 +3,11 @@
     "scope": "javascriptreact,typescriptreact",
     "prefix": "react-component",
     "body": [
+      "import { FC } from 'react';",
+      "",
       "type ${TM_FILENAME_BASE}Props = {$1};",
       "",
-      "export const ${TM_FILENAME_BASE} = (props: ${TM_FILENAME_BASE}Props): JSX.Element => {",
+      "export const ${TM_FILENAME_BASE}: FC<${TM_FILENAME_BASE}Props> = (props): JSX.Element => {",
       "  const {$2} = props;",
       "  return <>${TM_FILENAME_BASE}</>;",
       "};",
