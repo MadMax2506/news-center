@@ -28,7 +28,7 @@ export const ArticleCard = (props: ArticleCardProps): JSX.Element => {
   };
 
   const image = teaserImage?.imageVariants[`1x1-${IMAGE_SIZE}`];
-  const url = shareURL || detailsweb;
+  const url = shareURL ?? detailsweb;
 
   return (
     <BaseStructure>

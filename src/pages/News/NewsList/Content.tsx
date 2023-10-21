@@ -8,6 +8,7 @@ import { BaseStructure } from './BaseStructure';
 
 export const Content: FC = (): JSX.Element => {
   const { paginatedData } = usePaginationContext<Article>();
+
   return (
     <Stack spacing={4} alignItems="center" alignContent="center">
       <Pagination />
