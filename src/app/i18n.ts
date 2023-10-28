@@ -9,7 +9,7 @@ i18n
   .init({
     compatibilityJSON: 'v3',
     fallbackLng: LanguageConfiguration.DE,
-    supportedLngs: [LanguageConfiguration.DE, LanguageConfiguration.EN],
+    supportedLngs: [LanguageConfiguration.DE],
     defaultNS: DEFAULT_NS,
     // Namespaces are lazy loaded using `useTranslation'.
     ns: ['common'],
