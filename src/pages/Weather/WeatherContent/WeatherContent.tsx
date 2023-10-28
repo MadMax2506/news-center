@@ -25,5 +25,9 @@ export const WeatherContent = (): JSX.Element => {
   }
 
   const { weather, ...restWeatherData } = data;
-  return <WeatherCard weather={weather[0]} {...restWeatherData} />;
+  return (
+    <WeatherCard>
+      <WeatherCard.CurrentWeather weather={weather[0]} {...restWeatherData} />
+    </WeatherCard>
+  );
 };
