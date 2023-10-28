@@ -2,7 +2,7 @@ import { ExpandMore as ExpandMoreIcon } from '@mui/icons-material';
 import { Accordion, AccordionDetails, AccordionSummary, Divider, List, ListItem, Stack } from '@mui/material';
 import { FC, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
-import { AccordionType, HandleChangeFunction } from './weatherCard.types';
+import { AccordionType, HandleChangeFunction } from './currentWeather.types';
 
 type WeatherCardItemProps = {
   children: ReactNode[];

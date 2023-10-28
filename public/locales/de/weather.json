@@ -1,5 +1,9 @@
 {
-  "cloudiness": "Bewölkung: {{cloudiness}}%",
+  "air": {
+    "humidity": "Luftfeuchtigkeit: {{humidity}}%",
+    "pressure": "Luftdruck: {{pressure}} hPa",
+    "title": "Luft"
+  },
   "message": {
     "error": "Beim Laden der Wetter-Daten ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut."
   },
@@ -14,6 +18,11 @@
     },
     "title": "Niederschlag"
   },
+  "sky": {
+    "cloudiness": "Bewölkung: {{cloudiness}}%",
+    "visibility": "Sichtweite: {{visibility}} {{unit}}",
+    "title": "Himmel"
+  },
   "temperature": {
     "current": "Temperatur: {{temp}} °C",
     "feelsLike": "gefühlte Temperatur: {{temp}} °C",
@@ -25,5 +34,7 @@
     "gust": "Windböen: {{gust}} m/s",
     "speed": "Windgeschwindigkeit: {{speed}} m/s",
     "title": "Wind"
-  }
+  },
+  "sunrise": "{{sunrise}} Uhr",
+  "sunset": "{{sunset}} Uhr"
 }

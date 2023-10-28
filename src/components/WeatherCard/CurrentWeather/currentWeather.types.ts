@@ -4,4 +4,6 @@ export enum AccordionType {
   TEMPERATURE = 'temperature.title',
   WIND = 'wind.title',
   PRECIPITATION = 'precipitation.title',
+  AIR = 'air.title',
+  SKY = 'sky.title',
 }
