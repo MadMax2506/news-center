@@ -1,14 +1,8 @@
 // START: DONT REMOVE THE FOLLOWING IMPORTS
 import 'dayjs/locale/de';
-import 'dayjs/locale/en';
 // END: DONT REMOVE THE FOLLOWING IMPORTS
-import { Localization, deDE as muiMaterialDE, enUS as muiMaterialEN } from '@mui/material/locale';
-import {
-  LocalizationProvider,
-  PickersLocaleText,
-  deDE as muiDatePickersDE,
-  enUS as muiDatePickersEN,
-} from '@mui/x-date-pickers';
+import { Localization, deDE as muiMaterialDE } from '@mui/material/locale';
+import { LocalizationProvider, PickersLocaleText, deDE as muiDatePickersDE } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LanguageConfiguration, LanguageTag } from '@types';
 import dayjs, { Dayjs } from 'dayjs';
@@ -32,37 +26,29 @@ export const LanguageProvider = (props: PropsWithChildren) => {
 
   const currentLanguageTag = (): LanguageTag => {
     switch (currentLanguage) {
-      case LanguageConfiguration.DE:
-        return LanguageTag.DE_DE;
       default:
-        return LanguageTag.EN_US;
+        return LanguageTag.DE_DE;
     }
   };
 
   const currentMuiLocale = (): Localization => {
     switch (currentLanguage) {
-      case LanguageConfiguration.DE:
-        return muiMaterialDE;
       default:
-        return muiMaterialEN;
+        return muiMaterialDE;
     }
   };
 
   const currentDayJsLocale = (): string => {
     switch (currentLanguage) {
-      case LanguageConfiguration.DE:
-        return dayjs.locale('de');
       default:
-        return dayjs.locale('en');
+        return dayjs.locale('de');
     }
   };
 
   const currentMuiDatePickerLocaleTexts = (): Partial<PickersLocaleText<Dayjs>> => {
     switch (currentLanguage) {
-      case LanguageConfiguration.DE:
-        return muiDatePickersDE.components.MuiLocalizationProvider.defaultProps.localeText;
       default:
-        return muiDatePickersEN.components.MuiLocalizationProvider.defaultProps.localeText;
+        return muiDatePickersDE.components.MuiLocalizationProvider.defaultProps.localeText;
     }
   };
 
