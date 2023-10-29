@@ -1,13 +1,30 @@
 import { WeatherCard } from '@components/WeatherCard/WeatherCard';
 import { useCurrentWeather } from '@hooks/api/weather';
+import { useCurrentAirPollution } from '@hooks/api/weather/current/useCurrentAirPollution';
 import { Alert } from '@mui/material';
+import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { WeatherContentSkeletons } from './WeatherContentSkeletons';
 
-export const WeatherContent = (): JSX.Element => {
+export const WeatherContent: FC = () => {
   const { t } = useTranslation(['weather']);
 
-  const { data, isError, isLoading } = useCurrentWeather({
+  const {
+    data: currentWeather,
+    isError: isErrorCurrentWeather,
+    isLoading: isLoadingCurrentWeather,
+  } = useCurrentWeather({
+    // TODO https://github.com/MadMax2506/news-center/issues/17
+    queryParams: {
+      lat: 50.88072427159693,
+      lon: 6.098109855214391,
+    },
+  });
+  const {
+    data: currentAirPollution,
+    isError: isErrorCurrentAirPollution,
+    isLoading: isLoadingCurrentAirPollution,
+  } = useCurrentAirPollution({
     // TODO https://github.com/MadMax2506/news-center/issues/17
     queryParams: {
       lat: 50.88072427159693,
@@ -15,8 +32,8 @@ export const WeatherContent = (): JSX.Element => {
     },
   });
 
-  if (isLoading) return <WeatherContentSkeletons />;
-  if (isError) {
+  if (isLoadingCurrentWeather || isLoadingCurrentAirPollution) return <WeatherContentSkeletons />;
+  if (isErrorCurrentWeather || isErrorCurrentAirPollution) {
     return (
       <Alert severity="error" sx={{ width: '100%' }}>
         {t('message.error')}
@@ -24,10 +41,15 @@ export const WeatherContent = (): JSX.Element => {
     );
   }
 
-  const { weather, ...restWeatherData } = data;
+  const { weather, ...restCurrentWeatherData } = currentWeather;
+
   return (
     <WeatherCard>
-      <WeatherCard.CurrentWeather weather={weather[0]} {...restWeatherData} />
+      <WeatherCard.CurrentWeather
+        weather={weather[0]}
+        airPollution={currentAirPollution.list[0]}
+        {...restCurrentWeatherData}
+      />
     </WeatherCard>
   );
 };

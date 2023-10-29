@@ -1,7 +1,9 @@
 import {
+  BaseAirPollutionInformation,
   BaseWeatherInformation,
   Clouds,
   EnvironmentInformation,
+  ExtendedAirPollutionInformation,
   Precipitation,
   Weather,
   Wind,
@@ -15,11 +17,12 @@ import {
   Brightness5 as SunsetIcon,
   WaterDrop as WaterDropIcon,
 } from '@mui/icons-material';
-import { Grid, ListItemText, Stack, Typography, useTheme } from '@mui/material';
+import { Grid, Stack, Typography, useTheme } from '@mui/material';
 import dayjs from 'dayjs';
 import { FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { WeatherCardItem } from './CurrentWeatherItem';
+import { parseVisibility } from '../weatherCard.utils';
+import { CurrentWeatherItem } from './CurrentWeatherItem';
 import { AccordionType, HandleChangeFunction } from './currentWeather.types';
 
 export type CurrentWeatherProps = {
@@ -31,14 +34,13 @@ export type CurrentWeatherProps = {
   snow?: Precipitation;
   clouds: Clouds;
   sys: EnvironmentInformation;
+  airPollution: {
+    main: BaseAirPollutionInformation;
+    components: ExtendedAirPollutionInformation;
+  };
 };
 
-const parseVisibility = (visibility: number) => {
-  if (visibility <= 1000) return { visibility, unit: 'm' };
-  return { visibility: visibility / 1000, unit: 'km' };
-};
-
-export const CurrentWeather: FC<CurrentWeatherProps> = (props): JSX.Element => {
+export const CurrentWeather: FC<CurrentWeatherProps> = (props) => {
   const {
     weather: { icon, description },
     clouds: { all: cloudiness },
@@ -48,6 +50,10 @@ export const CurrentWeather: FC<CurrentWeatherProps> = (props): JSX.Element => {
     visibility,
     wind: { speed, gust },
     sys: { sunrise, sunset },
+    airPollution: {
+      main: { aqi: airQualityIndex },
+      components: { co, no, no2, o3, so2, pm2_5, pm10, nh3 },
+    },
   } = props;
 
   const { t } = useTranslation(['weather']);
@@ -85,42 +91,41 @@ export const CurrentWeather: FC<CurrentWeatherProps> = (props): JSX.Element => {
           <Stack mt={2} gap={1}>
             <Stack direction="row" gap={2}>
               <SunriseIcon />
-              {t('sunrise', { sunrise: formattedSunrise })}
+              <Typography>{t('sunrise', { sunrise: formattedSunrise })}</Typography>
             </Stack>
 
             <Stack direction="row" gap={2}>
               <SunsetIcon />
-              {t('sunset', { sunset: formattedSunset })}
+              <Typography>{t('sunset', { sunset: formattedSunset })}</Typography>
             </Stack>
           </Stack>
         </Grid>
 
         <Grid item xs={12} md={8} sx={gridItemStyle}>
           <Stack justifyItems="center">
-            <WeatherCardItem
+            <CurrentWeatherItem
               type={AccordionType.TEMPERATURE}
               icon={<DeviceThermostatIcon />}
               expanded={expanded}
               handleChange={handleChange}
             >
-              <ListItemText primary={t('temperature.current', { temp })} />
-              <ListItemText primary={t('temperature.feelsLike', { temp: feels_like })} />
-              <ListItemText primary={t('temperature.min', { temp: temp_min })} />
-              <ListItemText primary={t('temperature.max', { temp: temp_max })} />
-            </WeatherCardItem>
+              <Typography>{t('temperature.current', { temp })}</Typography>
+              <Typography>{t('temperature.feelsLike', { temp: feels_like })}</Typography>
+              <Typography>{t('temperature.min', { temp: temp_min })}</Typography>
+              <Typography>{t('temperature.max', { temp: temp_max })}</Typography>
+            </CurrentWeatherItem>
 
-            <WeatherCardItem
+            <CurrentWeatherItem
               type={AccordionType.WIND}
               icon={<StormIcon />}
               expanded={expanded}
               handleChange={handleChange}
             >
               <Typography>{t('wind.speed', { speed })}</Typography>
-
               {gust && <Typography>{t('wind.gust', { gust })}</Typography>}
-            </WeatherCardItem>
+            </CurrentWeatherItem>
 
-            <WeatherCardItem
+            <CurrentWeatherItem
               type={AccordionType.AIR}
               icon={<AirIcon />}
               expanded={expanded}
@@ -128,9 +133,17 @@ export const CurrentWeather: FC<CurrentWeatherProps> = (props): JSX.Element => {
             >
               <Typography>{t('air.pressure', { pressure })}</Typography>
               <Typography>{t('air.humidity', { humidity })}</Typography>
-            </WeatherCardItem>
+              <Typography>{t('air.co', { co })}</Typography>
+              <Typography>{t('air.no', { no })}</Typography>
+              <Typography>{t('air.no2', { no2 })}</Typography>
+              <Typography>{t('air.o3', { o3 })}</Typography>
+              <Typography>{t('air.so2', { so2 })}</Typography>
+              <Typography>{t('air.pm2_5', { pm2_5 })}</Typography>
+              <Typography>{t('air.pm10', { pm10 })}</Typography>
+              <Typography>{t('air.nh3', { nh3 })}</Typography>
+            </CurrentWeatherItem>
 
-            <WeatherCardItem
+            <CurrentWeatherItem
               type={AccordionType.SKY}
               icon={<CloudIcon />}
               expanded={expanded}
@@ -138,10 +151,10 @@ export const CurrentWeather: FC<CurrentWeatherProps> = (props): JSX.Element => {
             >
               <Typography>{t('sky.cloudiness', { cloudiness })}</Typography>
               <Typography>{t('sky.visibility', parseVisibility(visibility))}</Typography>
-            </WeatherCardItem>
+            </CurrentWeatherItem>
 
             {hasPrecipitation && (
-              <WeatherCardItem
+              <CurrentWeatherItem
                 type={AccordionType.PRECIPITATION}
                 icon={<WaterDropIcon />}
                 expanded={expanded}
@@ -158,7 +171,7 @@ export const CurrentWeather: FC<CurrentWeatherProps> = (props): JSX.Element => {
                 {snowLast3Hours && (
                   <Typography>{t('precipitation.snow.last3Hours', { snow: snowLast3Hours })}</Typography>
                 )}
-              </WeatherCardItem>
+              </CurrentWeatherItem>
             )}
           </Stack>
         </Grid>

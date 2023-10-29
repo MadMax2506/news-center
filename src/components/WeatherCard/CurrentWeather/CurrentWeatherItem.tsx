@@ -12,7 +12,7 @@ type WeatherCardItemProps = {
   handleChange: HandleChangeFunction;
 };
 
-export const WeatherCardItem: FC<WeatherCardItemProps> = (props): JSX.Element => {
+export const CurrentWeatherItem: FC<WeatherCardItemProps> = (props) => {
   const { type, icon, children, expanded, handleChange } = props;
 
   const { t } = useTranslation(['weather']);
@@ -29,12 +29,14 @@ export const WeatherCardItem: FC<WeatherCardItemProps> = (props): JSX.Element =>
 
       <AccordionDetails sx={{ p: 0 }}>
         <List>
-          {children.map((child, index) => (
-            <>
-              <ListItem key={child?.toLocaleString()}>{child}</ListItem>
-              {index < children.length - 1 && <Divider />}
-            </>
-          ))}
+          {children
+            .filter((child) => child)
+            .map((child, index, self) => (
+              <>
+                <ListItem key={child?.toLocaleString()}>{child}</ListItem>
+                {index < self.length - 1 && <Divider />}
+              </>
+            ))}
         </List>
       </AccordionDetails>
     </Accordion>
