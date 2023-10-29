@@ -1,5 +1,5 @@
 import { FC } from 'react';
 
-export const WeatherCardSkeletons: FC = (): JSX.Element => {
+export const WeatherCardSkeletons: FC = () => {
   return <>WeatherCardSkeletons</>;
 };

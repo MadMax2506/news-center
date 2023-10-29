@@ -28,7 +28,7 @@ const generateMenuItems = (): MenuItem[] => [
   },
 ];
 
-export const MenuBody: FC<MenuBodyProps> = ({ isMobile = false }): JSX.Element => {
+export const MenuBody: FC<MenuBodyProps> = ({ isMobile = false }) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 

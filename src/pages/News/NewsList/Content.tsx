@@ -6,7 +6,7 @@ import { Stack } from '@mui/material';
 import { FC } from 'react';
 import { BaseStructure } from './BaseStructure';
 
-export const Content: FC = (): JSX.Element => {
+export const Content: FC = () => {
   const { paginatedData } = usePaginationContext<Article>();
 
   return (

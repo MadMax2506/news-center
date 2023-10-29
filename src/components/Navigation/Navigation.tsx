@@ -1,11 +1,11 @@
 import { Menu as MenuIcon } from '@mui/icons-material';
 import { AppBar, Box, IconButton, Toolbar, Typography } from '@mui/material';
-import { KeyboardEvent, useState } from 'react';
+import { FC, KeyboardEvent, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { DesktopMenu, MobileMenu, ToggleDrawerFunction } from './Menu';
 import { SearchInput } from './SearchInput';
 
-export const Navigation = (): JSX.Element => {
+export const Navigation: FC = () => {
   const { t } = useTranslation();
 
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);

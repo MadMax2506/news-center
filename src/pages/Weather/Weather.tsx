@@ -1,10 +1,10 @@
 import { Container } from '@mui/material';
-import { Suspense } from 'react';
+import { FC, Suspense } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { WeatherContent, WeatherContentSkeletons } from './WeatherContent';
 
-export const Weather = (): JSX.Element => {
+export const Weather: FC = () => {
   const { t } = useTranslation();
 
   return (

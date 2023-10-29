@@ -1,8 +1,9 @@
 import { Search as SearchIcon } from '@mui/icons-material';
+import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Search, SearchIconWrapper, StyledInputBase } from './SearchInput.styled';
 
-export const SearchInput = (): JSX.Element => {
+export const SearchInput: FC = () => {
   const { t } = useTranslation();
 
   return (

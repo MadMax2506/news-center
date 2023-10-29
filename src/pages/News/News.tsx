@@ -1,12 +1,12 @@
 import { Container } from '@mui/material';
-import { Suspense } from 'react';
+import { FC, Suspense } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { NewsList, NewsListSkeletions } from './NewsList';
 
 export const PAGE_SIZE = 20;
 
-export const News = (): JSX.Element => {
+export const News: FC = () => {
   const { t } = useTranslation();
 
   return (

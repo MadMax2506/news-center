@@ -3,10 +3,11 @@ import { Stack } from '@mui/material';
 import { Dashboard } from '@pages/Dashboard';
 import { News } from '@pages/News';
 import { Weather } from '@pages/Weather';
+import { FC } from 'react';
 import { Navigate, Route as ReactRoute, Routes as ReactRoutes, BrowserRouter as Router } from 'react-router-dom';
 import { paths } from './paths';
 
-const RouterBody = (): JSX.Element => {
+const RouterBody: FC = () => {
   return (
     <>
       <Navigation />
@@ -23,7 +24,7 @@ const RouterBody = (): JSX.Element => {
   );
 };
 
-export const Routes = (): JSX.Element => {
+export const Routes: FC = () => {
   return (
     <Router>
       <RouterBody />

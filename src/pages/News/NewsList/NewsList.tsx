@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { PAGE_SIZE } from '../News';
 import { Content } from './Content';
 
-export const NewsList: FC = (): JSX.Element => {
+export const NewsList: FC = () => {
   const { t } = useTranslation(['article']);
 
   const { data, isError } = useTagesschauNews({

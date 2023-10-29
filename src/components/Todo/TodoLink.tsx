@@ -22,7 +22,7 @@ function getLinkData(props: TodoLinkProps): [string, ReactNode] {
   }
 }
 
-export function TodoLink(props: TodoLinkProps): JSX.Element {
+export const TodoLink = (props: TodoLinkProps) => {
   const [link, label] = useMemo(() => getLinkData(props), [props]);
 
   return (
@@ -30,4 +30,4 @@ export function TodoLink(props: TodoLinkProps): JSX.Element {
       {label}
     </Link>
   );
-}
+};

@@ -1,5 +1,5 @@
 import { Box, Stack, Typography, useTheme } from '@mui/material';
-import { PropsWithChildren } from 'react';
+import { FC, PropsWithChildren } from 'react';
 import { TodoLink } from './TodoLink';
 import { TodoTitle } from './TodoTitle';
 
@@ -8,7 +8,7 @@ type TodoProps = {
   ticketId?: number;
 };
 
-export function Todo(props: PropsWithChildren<TodoProps>): JSX.Element | null {
+export const Todo: FC<PropsWithChildren<TodoProps>> = (props) => {
   const theme = useTheme();
 
   // don't do anything on non-dev or testing environements
@@ -39,4 +39,4 @@ export function Todo(props: PropsWithChildren<TodoProps>): JSX.Element | null {
       </Stack>
     </Stack>
   );
-}
+};

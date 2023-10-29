@@ -7,7 +7,7 @@ type NewsListSkeletionsProps = {
   pageSize: number;
 };
 
-export const NewsListSkeletions: FC<NewsListSkeletionsProps> = ({ pageSize }): JSX.Element => (
+export const NewsListSkeletions: FC<NewsListSkeletionsProps> = ({ pageSize }) => (
   <DelayedComponent delay={0}>
     <BaseStructure>
       {new Array(pageSize).fill(null).map((_, index) => (
