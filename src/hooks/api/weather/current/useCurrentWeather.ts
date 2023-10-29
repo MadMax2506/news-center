@@ -1,8 +1,8 @@
 import { UseQueryResult, useQuery } from '@tanstack/react-query';
 import { Simplify } from 'type-fest';
-import { BaseApiQueryProps } from '../api.types';
-import { request } from '../request';
-import { OPEN_WEATHER_API_V2 } from './weather.const';
+import { BaseApiQueryProps } from '../../api.types';
+import { request } from '../../request';
+import { OPEN_WEATHER_API_V2 } from '../weather.const';
 import {
   BaseWeatherInformation,
   Clouds,
@@ -11,7 +11,7 @@ import {
   Precipitation,
   Weather,
   Wind,
-} from './weather.types';
+} from '../weather.types';
 
 type CurrentWeatherQueryParams = {
   lat: number;

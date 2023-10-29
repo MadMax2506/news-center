@@ -75,3 +75,26 @@ enum WeatherTypes {
   CLEAR = 'Clear',
   CLOUDS = 'Clouds',
 }
+
+export type BaseAirPollutionInformation = {
+  aqi: AirQualityIndex;
+};
+
+export type ExtendedAirPollutionInformation = {
+  co: number;
+  no: number;
+  no2: number;
+  o3: number;
+  so2: number;
+  pm2_5: number;
+  pm10: number;
+  nh3: number;
+};
+
+export enum AirQualityIndex {
+  GOOD = 1,
+  FAIR = 2,
+  MODERATE = 3,
+  POOR = 4,
+  VERY_POOR = 5,
+}
