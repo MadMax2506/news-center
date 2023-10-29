@@ -46,11 +46,11 @@ export const PaginationProvider = <TData,>(props: PropsWithChildren<PaginationPr
   );
 };
 
-export function usePaginationContext<TData>(): Pagination<TData> {
+export const usePaginationContext = <TData,>(): Pagination<TData> => {
   const PaginationContext = createPaginationContext<TData>();
   const context = useContext<Pagination<TData> | undefined>(PaginationContext);
   if (context === undefined) {
     throw new Error('usePaginationContext must be used within a PaginationProvider');
   }
   return context;
-}
+};

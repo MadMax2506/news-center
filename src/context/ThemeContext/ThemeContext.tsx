@@ -39,10 +39,10 @@ export const ThemeProvider: FC = (props: PropsWithChildren) => {
   );
 };
 
-export function useThemeContext(): Theme {
+export const useThemeContext = (): Theme => {
   const context = useContext<Theme | undefined>(ThemeContext);
   if (context === undefined) {
     throw new Error('useThemeContext must be used within a ThemeProvider');
   }
   return context;
-}
+};
