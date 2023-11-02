@@ -1,48 +1,61 @@
 {
-  "React Component": {
-    "scope": "javascriptreact,typescriptreact",
+  "React Component with props": {
+    "scope": "typescriptreact",
     "prefix": "react-component",
     "body": [
       "import { FC } from 'react';",
       "",
       "type ${TM_FILENAME_BASE}Props = {$1};",
       "",
-      "export const ${TM_FILENAME_BASE}: FC<${TM_FILENAME_BASE}Props> = (props): JSX.Element => {",
+      "export const ${TM_FILENAME_BASE}: FC<${TM_FILENAME_BASE}Props> = (props) => {",
       "  const {$2} = props;",
       "  return <>${TM_FILENAME_BASE}</>;",
       "};",
       ""
     ],
-    "description": "React Component"
+    "description": "React Component with props"
+  },
+  "React Component without props": {
+    "scope": "typescriptreact",
+    "prefix": "react-component-without-props",
+    "body": [
+      "import { FC } from 'react';",
+      "",
+      "export const ${TM_FILENAME_BASE}: FC = () => {",
+      "  return <>${TM_FILENAME_BASE}</>;",
+      "};",
+      ""
+    ],
+    "description": "React Component without props"
   },
   "React Context": {
-    "scope": "javascriptreact,typescriptreact,javascript,typescript",
+    "scope": "typescriptreact,typescript",
     "prefix": "react-context",
     "body": [
-      "import { createContext, PropsWithChildren, useContext } from 'react';",
+      "import { createContext, FC, PropsWithChildren, useContext } from 'react';",
       "",
       "type ${TM_FILENAME_BASE/Context//g} = {$1};",
       "",
       "const ${TM_FILENAME_BASE} = createContext<${TM_FILENAME_BASE/Context//g} | undefined>(undefined);",
       "",
-      "export function ${TM_FILENAME_BASE/Context//g}Provider(props: PropsWithChildren): JSX.Element {",
+      "export const ${TM_FILENAME_BASE/Context//g}Provider: FC<PropsWithChildren> = (props) => {",
       "  const { children } = props;",
       "  return <${TM_FILENAME_BASE}.Provider value={{}}>{children}</${TM_FILENAME_BASE}.Provider>;",
-      "}",
+      "};",
       "",
-      "export function use${TM_FILENAME_BASE}(): ${TM_FILENAME_BASE/Context//g} {",
+      "export const use${TM_FILENAME_BASE} = (): ${TM_FILENAME_BASE/Context//g} => {",
       "  const context = useContext<${TM_FILENAME_BASE/Context//g} | undefined>(${TM_FILENAME_BASE});",
       "  if (context === undefined) {",
       "    throw new Error('use${TM_FILENAME_BASE} must be used within a ${TM_FILENAME_BASE/Context//g}Provider');",
       "  }",
       "  return context;",
-      "}",
+      "};",
       ""
     ],
     "description": "React Context"
   },
-  "Custom React Hook": {
-    "scope": "javascriptreact,typescriptreact,javascript,typescript",
+  "Custom React Hook with props": {
+    "scope": "typescriptreact,typescript",
     "prefix": "react-hook",
     "body": [
       "type ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Props = {$1};",
@@ -54,12 +67,19 @@
       "};",
       ""
     ],
-    "description": "Custom React Hook"
+    "description": "Custom React Hook with props"
   },
-  "React Router Page": {
-    "scope": "javascriptreact,typescriptreact",
-    "prefix": "react-router-page",
-    "body": ["export const ${TM_FILENAME_BASE} = (): JSX.Element => {", "  return <>${TM_FILENAME_BASE}</>;", "};", ""],
-    "description": "React Router Page"
+  "Custom React Hook without props": {
+    "scope": "typescriptreact,typescript",
+    "prefix": "react-hook-without-props",
+    "body": [
+      "type ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Return = {$1};",
+      "",
+      "export const ${TM_FILENAME_BASE} = (): ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Return => {",
+      "  return {$2};",
+      "};",
+      ""
+    ],
+    "description": "Custom React Hook without props"
   }
 }

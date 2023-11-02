@@ -25,7 +25,7 @@ type PaginationProviderProps<TData> = Simplify<
   }
 >;
 
-export function PaginationProvider<TData>(props: PropsWithChildren<PaginationProviderProps<TData>>): JSX.Element {
+export const PaginationProvider = <TData,>(props: PropsWithChildren<PaginationProviderProps<TData>>) => {
   const { children, data, pageSize = DEFAULT_PAGE_SIZE, ...rest } = props;
 
   const totalElements = data.length;
@@ -44,13 +44,13 @@ export function PaginationProvider<TData>(props: PropsWithChildren<PaginationPro
       {children}
     </PaginationContext.Provider>
   );
-}
+};
 
-export function usePaginationContext<TData>(): Pagination<TData> {
+export const usePaginationContext = <TData,>(): Pagination<TData> => {
   const PaginationContext = createPaginationContext<TData>();
   const context = useContext<Pagination<TData> | undefined>(PaginationContext);
   if (context === undefined) {
     throw new Error('usePaginationContext must be used within a PaginationProvider');
   }
   return context;
-}
+};

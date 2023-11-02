@@ -4,7 +4,7 @@ import { FC } from 'react';
 import { FallbackProps } from 'react-error-boundary';
 import { useTranslation } from 'react-i18next';
 
-export const ErrorFallbackPageProps: FC<FallbackProps> = ({ error }): JSX.Element => {
+export const ErrorFallbackPageProps: FC<FallbackProps> = ({ error }) => {
   const { t } = useTranslation();
 
   if (import.meta.env.DEV) console.error(error);

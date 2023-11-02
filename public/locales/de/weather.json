@@ -2,7 +2,22 @@
   "air": {
     "humidity": "Luftfeuchtigkeit: {{humidity}}%",
     "pressure": "Luftdruck: {{pressure}} hPa",
+    "co": "Kohlenmonoxid: {{co}} μg/m³",
+    "no": "Nitrogenmonoxid: {{no}} μg/m³",
+    "no2": "Nitrogendioxid: {{no2}} μg/m³",
+    "o3": "Ozon: {{o3}} μg/m³",
+    "so2": "Sulfurdioxid: {{so2}} μg/m³",
+    "pm2_5": "Feinstaub (PM2.5): {{pm2_5}} μg/m³",
+    "pm10": "Grobstaub (PM10): {{pm10}} μg/m³",
+    "nh3": "Ammoniak: {{nh3}} μg/m³",
     "title": "Luft"
+  },
+  "airQualityIndex": {
+    "good": "Luftqualitätsindex: gut",
+    "moderate": "Luftqualitätsindex: mäßig",
+    "fair": "Luftqualitätsindex: befriedigend",
+    "poor": "Luftqualitätsindex: schlecht",
+    "veryPoor": "Luftqualitätsindex: sehr schlecht"
   },
   "message": {
     "error": "Beim Laden der Wetter-Daten ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut."

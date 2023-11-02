@@ -1,7 +1,7 @@
 import { CssBaseline, ThemeProvider as MuiThemeProvider, PaletteMode, ScopedCssBaseline } from '@mui/material';
-import { darkTheme, lightTheme } from './theme';
-import { JSX, PropsWithChildren, createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { FC, PropsWithChildren, createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { useCookies } from 'react-cookie';
+import { darkTheme, lightTheme } from './theme';
 
 const defaultMode = (): PaletteMode => (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
@@ -12,7 +12,7 @@ type Theme = {
 
 const ThemeContext = createContext<Theme | undefined>(undefined);
 
-export function ThemeProvider(props: PropsWithChildren): JSX.Element {
+export const ThemeProvider: FC = (props: PropsWithChildren) => {
   const { children } = props;
 
   const [cookies, setCookie] = useCookies(['theme-mode']);
@@ -37,12 +37,12 @@ export function ThemeProvider(props: PropsWithChildren): JSX.Element {
       </MuiThemeProvider>
     </ThemeContext.Provider>
   );
-}
+};
 
-export function useThemeContext(): Theme {
+export const useThemeContext = (): Theme => {
   const context = useContext<Theme | undefined>(ThemeContext);
   if (context === undefined) {
     throw new Error('useThemeContext must be used within a ThemeProvider');
   }
   return context;
-}
+};

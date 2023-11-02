@@ -11,7 +11,7 @@ type WeatherCardProps = {
   children: ReactNode | ReactNode[];
 };
 
-const WeatherCard: FC<WeatherCardProps> & IWeatherCardComposition = ({ children }): JSX.Element => {
+const WeatherCard: FC<WeatherCardProps> & IWeatherCardComposition = ({ children }) => {
   return (
     <Card sx={{ p: 3 }}>
       {(isArray(children) ? children : [children]).map((child) => (

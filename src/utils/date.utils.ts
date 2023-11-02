@@ -14,13 +14,13 @@ const DEFAULT_DATE_FORMAT_OPTIONS: DateOptions = {
   day: '2-digit',
 };
 
-export function formatByCurrentDate(date: string | Date, options?: DateOptions): string {
+export const formatByCurrentDate = (date: string | Date, options?: DateOptions): string => {
   const { languageTag } = useLanguageContext();
 
   return new Date(date).toLocaleDateString(languageTag, options ?? DEFAULT_DATE_FORMAT_OPTIONS);
-}
+};
 
-export function formatByCurrentTime(date: string | Date, options?: DateOptions): string {
+export const formatByCurrentTime = (date: string | Date, options?: DateOptions): string => {
   const { languageTag } = useLanguageContext();
 
   return new Date(date).toLocaleTimeString(
@@ -31,4 +31,4 @@ export function formatByCurrentTime(date: string | Date, options?: DateOptions):
       hour12: false,
     }
   );
-}
+};

@@ -5,7 +5,7 @@ import { BaseMenuProps } from './menu.types';
 
 type DesktopMenuProps = BaseMenuProps;
 
-export const DesktopMenu: FC<DesktopMenuProps> = ({ openDrawer, toggleDrawer }): JSX.Element => {
+export const DesktopMenu: FC<DesktopMenuProps> = ({ openDrawer, toggleDrawer }) => {
   return (
     <Drawer
       anchor={'left'}

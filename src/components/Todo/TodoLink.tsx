@@ -12,7 +12,7 @@ type TodoLinkProps = PropsWithChildren<
     }
 >;
 
-function getLinkData(props: TodoLinkProps): [string, ReactNode] {
+const getLinkData = (props: TodoLinkProps): [string, ReactNode] => {
   switch (props.type) {
     case 'ticket':
       return [`https://github.com/MadMax2506/news-center/issues/${props.ticketId}`, `#${props.ticketId}`];
@@ -20,9 +20,9 @@ function getLinkData(props: TodoLinkProps): [string, ReactNode] {
     default:
       return [props.href, props.children];
   }
-}
+};
 
-export function TodoLink(props: TodoLinkProps): JSX.Element {
+export const TodoLink = (props: TodoLinkProps) => {
   const [link, label] = useMemo(() => getLinkData(props), [props]);
 
   return (
@@ -30,4 +30,4 @@ export function TodoLink(props: TodoLinkProps): JSX.Element {
       {label}
     </Link>
   );
-}
+};

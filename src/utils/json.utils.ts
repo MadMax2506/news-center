@@ -1,6 +1,6 @@
 import { FlatJSONObject, JSONObject } from '@types';
 
-export function flatJsonObject(obj: JSONObject) {
+export const flatJsonObject = (obj: JSONObject) => {
   const res: FlatJSONObject = {};
   const flat = (props: { object: JSONObject; prev?: string }) => {
     const { object, prev } = props;
@@ -20,4 +20,4 @@ export function flatJsonObject(obj: JSONObject) {
   flat({ object: obj });
 
   return res;
-}
+};

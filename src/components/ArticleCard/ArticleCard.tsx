@@ -2,7 +2,7 @@ import { Article } from '@hooks/api/news';
 import { OpenInNew as OpenInNewIcon, Share as ShareIcon } from '@mui/icons-material';
 import { Alert, CardActions, CardHeader, CardMedia, IconButton, Snackbar, Tooltip } from '@mui/material';
 import dayjs from 'dayjs';
-import { SyntheticEvent, useState } from 'react';
+import { FC, SyntheticEvent, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BaseStructure } from './BaseStructure';
 
@@ -12,7 +12,7 @@ type ArticleCardProps = {
 
 export const IMAGE_SIZE = 256;
 
-export const ArticleCard = (props: ArticleCardProps): JSX.Element => {
+export const ArticleCard: FC<ArticleCardProps> = (props) => {
   const {
     article: { title, teaserImage, date, shareURL, detailsweb },
   } = props;

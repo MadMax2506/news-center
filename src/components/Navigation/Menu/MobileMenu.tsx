@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { MenuBody } from './MenuBody';
 import { BaseMenuProps } from './menu.types';
 
-export const MobileMenu: FC<BaseMenuProps> = ({ openDrawer, toggleDrawer }): JSX.Element => {
+export const MobileMenu: FC<BaseMenuProps> = ({ openDrawer, toggleDrawer }) => {
   return (
     <Drawer
       anchor={'bottom'}
