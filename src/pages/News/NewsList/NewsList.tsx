@@ -9,11 +9,13 @@ import { Content } from './Content';
 export const NewsList: FC = () => {
   const { t } = useTranslation(['article']);
 
-  const { data, isError } = useTagesschauNews({
+  const { data, isError, isLoading } = useTagesschauNews({
     // TODO https://github.com/MadMax2506/news-center/issues/17
     queryParams: { region: Regions.NORTHRHINE_WESTPHALIA },
+    suspense: true,
   });
 
+  if (isLoading) return <></>;
   if (isError) {
     return (
       <Alert severity="error" sx={{ width: '100%' }}>
@@ -22,7 +24,7 @@ export const NewsList: FC = () => {
     );
   }
 
-  const { news = [] } = data ?? {};
+  const { news = [] } = data;
   const filteredNews = news.filter(({ shareURL, detailsweb }) => Boolean(shareURL) || Boolean(detailsweb));
 
   return (

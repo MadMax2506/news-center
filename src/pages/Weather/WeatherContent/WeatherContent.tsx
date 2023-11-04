@@ -4,7 +4,6 @@ import { useCurrentAirPollution } from '@hooks/api/weather/current/useCurrentAir
 import { Alert } from '@mui/material';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { WeatherContentSkeletons } from './WeatherContentSkeletons';
 
 export const WeatherContent: FC = () => {
   const { t } = useTranslation(['weather']);
@@ -19,6 +18,7 @@ export const WeatherContent: FC = () => {
       lat: 50.88072427159693,
       lon: 6.098109855214391,
     },
+    suspense: true,
   });
   const {
     data: currentAirPollution,
@@ -30,9 +30,10 @@ export const WeatherContent: FC = () => {
       lat: 50.88072427159693,
       lon: 6.098109855214391,
     },
+    suspense: true,
   });
 
-  if (isLoadingCurrentWeather || isLoadingCurrentAirPollution) return <WeatherContentSkeletons />;
+  if (isLoadingCurrentWeather || isLoadingCurrentAirPollution) return <></>;
   if (isErrorCurrentWeather || isErrorCurrentAirPollution) {
     return (
       <Alert severity="error" sx={{ width: '100%' }}>
