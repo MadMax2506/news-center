@@ -39,7 +39,7 @@
     "type-fest": "^4.8.2",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-svgr": "^4.2.0",
-    "vite-tsconfig-paths": "^4.2.1"
+    "vite-tsconfig-paths": "^4.2.2"
   },
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "^5.12.1",
