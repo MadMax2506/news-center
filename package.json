@@ -36,7 +36,7 @@
     "react-i18next": "^14.0.5",
     "react-router-dom": "^6.22.1",
     "static-path": "^0.0.4",
-    "type-fest": "^4.10.2",
+    "type-fest": "^4.10.3",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-svgr": "^4.2.0",
     "vite-tsconfig-paths": "^4.3.1"
