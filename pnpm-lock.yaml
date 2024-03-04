@@ -98,8 +98,8 @@ devDependencies:
     specifier: ^20.11.20
     version: 20.11.20
   '@types/qs':
-    specifier: ^6.9.11
-    version: 6.9.11
+    specifier: ^6.9.12
+    version: 6.9.12
   '@types/react':
     specifier: ^18.2.58
     version: 18.2.58
@@ -1606,7 +1606,7 @@ packages:
     resolution: {integrity: sha512-fvr49XlCGoUj2Pp730AItckfjat4WNb0lb3kfrLWffd+RLeoGAMsq7UOy04PAPtoL01uKwcp6u8nhzpgpDYr3w==}
     dependencies:
       '@types/node': 20.11.20
-      '@types/qs': 6.9.11
+      '@types/qs': 6.9.12
       '@types/range-parser': 1.2.4
       '@types/send': 0.17.1
     dev: true
@@ -1616,7 +1616,7 @@ packages:
     dependencies:
       '@types/body-parser': 1.19.2
       '@types/express-serve-static-core': 4.17.34
-      '@types/qs': 6.9.11
+      '@types/qs': 6.9.12
       '@types/serve-static': 1.15.1
     dev: true
 
@@ -1662,8 +1662,8 @@ packages:
   /@types/prop-types@15.7.11:
     resolution: {integrity: sha512-ga8y9v9uyeiLdpKddhxYQkxNDrfvuPrlFb0N1qnZZByvcElJaXthF1UhvCh9TLWJBEHeNtdnbysW7Y6Uq8CVng==}
 
-  /@types/qs@6.9.11:
-    resolution: {integrity: sha512-oGk0gmhnEJK4Yyk+oI7EfXsLayXatCWPHary1MtcmbAifkobT9cM9yutG/hZKIseOU0MqbIwQ/u2nn/Gb+ltuQ==}
+  /@types/qs@6.9.12:
+    resolution: {integrity: sha512-bZcOkJ6uWrL0Qb2NAWKa7TBU+mJHPzhx9jjLL1KHF+XpzEcR7EXHvjbHlGtR/IsP1vyPrehuS6XqkmaePy//mg==}
     dev: true
 
   /@types/range-parser@1.2.4:
