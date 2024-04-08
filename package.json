@@ -63,7 +63,7 @@
     "prettier": "^2.8.8",
     "react-test-renderer": "^18.2.0",
     "typescript": "^5.4.4",
-    "vite": "^5.2.7",
+    "vite": "^5.2.8",
     "vitest": "^1.4.0"
   }
 }
