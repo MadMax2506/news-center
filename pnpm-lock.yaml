@@ -19,7 +19,7 @@ dependencies:
     version: 5.15.15(@emotion/react@11.11.4)(@emotion/styled@11.11.5)(@types/react@18.2.78)(react-dom@18.2.0)(react@18.2.0)
   '@mui/x-date-pickers':
     specifier: ^6.19.7
-    version: 6.19.7(@emotion/react@11.11.4)(@emotion/styled@11.11.5)(@mui/material@5.15.15)(@mui/system@5.15.15)(@types/react@18.2.78)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0)
+    version: 6.19.7(@emotion/react@11.11.4)(@emotion/styled@11.11.5)(@mui/material@5.15.15)(@mui/system@5.15.15)(@types/react@18.2.78)(dayjs@1.11.11)(react-dom@18.2.0)(react@18.2.0)
   '@tanstack/react-query':
     specifier: ^4.36.1
     version: 4.36.1(react-dom@18.2.0)(react@18.2.0)
@@ -30,8 +30,8 @@ dependencies:
     specifier: ^1.6.8
     version: 1.6.8
   dayjs:
-    specifier: ^1.11.10
-    version: 1.11.10
+    specifier: ^1.11.11
+    version: 1.11.11
   i18next:
     specifier: ^23.11.2
     version: 23.11.2
@@ -1132,7 +1132,7 @@ packages:
       react-is: 18.2.0
     dev: false
 
-  /@mui/x-date-pickers@6.19.7(@emotion/react@11.11.4)(@emotion/styled@11.11.5)(@mui/material@5.15.15)(@mui/system@5.15.15)(@types/react@18.2.78)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0):
+  /@mui/x-date-pickers@6.19.7(@emotion/react@11.11.4)(@emotion/styled@11.11.5)(@mui/material@5.15.15)(@mui/system@5.15.15)(@types/react@18.2.78)(dayjs@1.11.11)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-BCTOQjAuyU29Ymd2FJrHHdRh0U6Qve7MsthdrD2jjaMaR8ou455JuxsNTQUGSpiMkGHWOMVq+B8N1EBcSYH63g==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -1178,7 +1178,7 @@ packages:
       '@mui/utils': 5.15.12(@types/react@18.2.78)(react@18.2.0)
       '@types/react-transition-group': 4.4.10
       clsx: 2.1.0
-      dayjs: 1.11.10
+      dayjs: 1.11.11
       prop-types: 15.8.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -2334,8 +2334,8 @@ packages:
       whatwg-url: 14.0.0
     dev: true
 
-  /dayjs@1.11.10:
-    resolution: {integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==}
+  /dayjs@1.11.11:
+    resolution: {integrity: sha512-okzr3f11N6WuqYtZSvm+F776mB41wRZMhKP+hc34YdW+KmtYYK9iqvHSwo2k9FEH3fhGXvOPV6yz2IcSrfRUDg==}
     dev: false
 
   /debug@4.3.4:
